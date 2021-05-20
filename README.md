@@ -13,7 +13,8 @@ This ansible role is tested on ubuntu VM.
 ## installtion steps:
 
    `clone the repo https://github.com/sarath9985/DevOps-Test.git`
-    `cd ansible-docker-minikube`
+
+   `cd ansible-docker-minikube`
 
     Repalce the below values.
 
