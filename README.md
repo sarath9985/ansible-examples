@@ -1,44 +1,38 @@
-## role actions:
+## terraform actions:
 
-1. install docker
-2. build docker image
-3. push image to repo
-3. install minikube
-4. install kubectl
-5. create a deployment for same image
-
-This ansible role is tested on ubuntu VM.
+1. create aws eks cluster
+2. add instance group to cluster
+3. push terraform state to s3
 
 
 ## installtion steps:
 
    `clone the repo https://github.com/sarath9985/DevOps-Test.git`
+   
+    update the values in variables.tf, according to the aws account, before you start the creation.
 
-   `cd ansible-docker-minikube`
+    Upload this folder into guthub repo and create a job using the same repo.
+    Once you start a build, it will send you a mail for confirming the resource creation.
+    if you approved, it will create the cluster, add nodes to cluster and shows the kubeconfig file as output.
 
-    Repalce the below values.
+    #manual creation
+    `cd eks-cicd`
 
-    1. docker-role defaults.yml.
-        hub_username: xxxxxxxxxx
-        hub_password: xxxxxxxxx
-        hub_registry: <UserName>/<RepoName>
+    update the values in variables.tf
+    terraform init
+    terraform plan
+    terraform apply
 
-    2. hostsfile.
-        VM IP: 54.x.x.x
-        yourkey.pem: <sshkeyPath>
-        `[devops-test]
-        54.x.x.x ansible_user=ubuntu ansible_ssh_private_key_file=./yourkey.pem`
+     
 
-    3. check VM is pinging or not.
-        `ansible -i hosts -m ping devops-test`     
-        
-    4. run the playbook
-
-        `ansible-playbook  -i hosts playbook.yml`
-        
         
  ## Output:
     `kubernetes pods logs`
-       
-   ![image](https://user-images.githubusercontent.com/38203972/118935136-ce7f5a00-b910-11eb-90cb-0db2ba4d9d3b.png)
+
+    `kubectl get no --kubeconfig kubeconfig_devops-test`
+
+    `NAME                            STATUS   ROLES    AGE   VERSION
+    ip-172-31-21-98.ec2.internal    Ready    <none>   22m   v1.20.4-eks-6b7464
+    ip-172-31-43-251.ec2.internal   Ready    <none>   22m   v1.20.4-eks-6b7464`
+
 
