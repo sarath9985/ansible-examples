@@ -37,7 +37,8 @@ This ansible role is tested on ubuntu VM.
         `ansible-playbook  -i hosts playbook.yml`
         
         
- ## Output:      
+ ## Output:
+    `kubernetes pods logs`
        
-   ![image](https://user-images.githubusercontent.com/38203972/118935136-ce7f5a00-b910-11eb-90cb-0db2ba4d9d3b.png)
+     ![image](https://user-images.githubusercontent.com/38203972/118935136-ce7f5a00-b910-11eb-90cb-0db2ba4d9d3b.png)
 
