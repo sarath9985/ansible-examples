@@ -34,5 +34,9 @@
     NAME                            STATUS   ROLES    AGE   VERSION
     ip-172-31-21-98.ec2.internal    Ready    <none>   22m   v1.20.4-eks-6b7464
     ip-172-31-43-251.ec2.internal   Ready    <none>   22m   v1.20.4-eks-6b7464
+    
+    
+    # ansible-docker-minikube
+[`jboss-standalone/`](./jboss-standalone/)
 
 
